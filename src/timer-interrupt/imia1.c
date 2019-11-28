@@ -1,5 +1,41 @@
 #include <3048f.h>
 
+/* ITU1.TCR.BYTE 
+ *     7     6     5     4     3     2     1     0
+ * -(0)- CCLR1 CCLR0 CKEG1 CKEG0 TPSC2 TPSC1 TPSC0
+ *
+ *
+ * TPSC: System clock
+ * 000  001  010  011
+ *  16    8    4    2 (MHz)
+ *
+ * CKEG: Count timing
+ *     00      01   1-
+ * Rising Falling Both (Edge)
+ *
+ * CCLR: Clear settings
+ *           00             01  10     11
+ * Forbid clear (Clear w/) GRA GRB Others 
+ * */
+
+/* ITU1.TIER.BYTE
+ *     7     6     5     4     3     2     1     0
+ * -(1)- -(1)- -(1)- -(1)- -(1)- OVIE  IMIEB IMIEA
+ *  
+ * Interrupt by flags
+ * 0: Forbid, 1: Allow
+ * */
+
+/* ITU.TSTR.BYTE
+ *     7     6     5    4     3     2     1     0
+ * -(1)- -(1)- -(1)- STR4  STR3  STR2  STR1  STR0
+ * 
+ * Timer counter
+ * STR0 - STR4
+ * ITU0 - ITU4
+ * 0: Stop, 1:Start
+ * */
+
 #pragma interrupt(int_imia1)
 int cnt;
 

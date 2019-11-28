@@ -1,0 +1,20 @@
+; Startup Routine H8/300H
+; Timer Interrupt Startup Program
+
+; Definitions
+	.CPU 300HA:20		; Specify a CPU
+	.IMPORT _main		; Define external functions
+	.IMPORT _int_imia1
+
+; Vector
+	.SECTION VECTOR,DATA,LOCATE=H'00000
+	.DATA.L RESET
+	.ORG H'00070
+	.DATA.L _int_imia1
+
+; Reset
+	.SECTION RESETSEC,CODE,LOCATE=H'00100
+RESET:	MOV.1 #H'FFF10,ER7
+	LDC.B
+	JMP @_main
+	.END
