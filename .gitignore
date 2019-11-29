@@ -1,5 +1,6 @@
-*.lis
-*.mot
+*.LIS
+*.OBJ
+*.MAP
 *.obj
-*.abs
-*.map
+*.ABS
+*.MOT
