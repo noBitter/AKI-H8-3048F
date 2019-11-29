@@ -1,6 +1,6 @@
-INPUT IMIA1_STARTUP, imia1
-OUTPUT IMIA1
-PRINT IMIA1
+INPUT imia1_startup, imia1
+OUTPUT imia1
+PRINT imia1
 LIBRARY C:\aki_h8\lib\c38hab
 
 START P,C,D(200),B(0FEF10)
