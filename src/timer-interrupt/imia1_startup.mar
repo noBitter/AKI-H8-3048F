@@ -13,8 +13,8 @@
 	.DATA.L _int_imia1
 
 ; Reset
-	.SECTION RESETSEC,CODE,LOCATE=H'00100
-RESET:	MOV.L #H'FFF10,ER7
-	LDC.B #0,CCR
-	JMP @_main
+	.SECTION RESETSEC,CODE,LOCATE=H'00100 	; Code section address starts in 100H
+RESET:	MOV.L #H'FFF10,ER7 			; Set stack pointer
+	LDC.B #0,CCR 				; Clear interrupt mask, not use UI bit
+	JMP @_main 				; Jump to the main routine
 	.END
