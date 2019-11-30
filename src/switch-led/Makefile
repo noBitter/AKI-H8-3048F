@@ -14,16 +14,15 @@
 #	SRC_LINK = *.sub	# Linker file
 #	LINK_MAP = *.MAP	# Linker Map file
 
-TARGET =
-SRC_C =
-SRC_ASM =
-SRC_LINK =
-LINK_MAP =
+TARGET = switch_led.MOT
+SRC_C = main.c
+SRC_ASM = startup.mar
+SRC_LINK = link.sub
+LINK_MAP = print.MAP
 
-LIST_ASM = $(SRC_ASM:.MAR=.LIS)
-OBJ_ASM = $(SRC_ASM:.MAR=.OBJ)
+LIST_ASM = $(SRC_ASM:.mar=.LIS)
+OBJ_ASM = $(SRC_ASM:.mar=.OBJ)
 OBJ_C = $(SRC_C:.c=.obj)
-#EXE_MAP = $(TARGET:.MOT=.MAP)
 EXE_ABS = $(TARGET:.MOT=.ABS)
 
 $(TARGET): $(SRC_C) $(SRC_ASM) $(SRC_LINK)
