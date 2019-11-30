@@ -1,0 +1,8 @@
+INPUT startup, main
+OUTPUT switch_led
+PRINT print
+LIBRARY C:\aki_h8\lib\c38hab
+
+START P,C,D(200),B(0FEF10)
+
+EXIT
