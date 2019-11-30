@@ -12,16 +12,18 @@
 # 	SRC_C = *.c		# C source file
 #	SRC_ASM = *.mar		# Asembly source file
 #	SRC_LINK = *.sub	# Linker file
+#	LINK_MAP = *.MAP	# Linker Map file
 
 TARGET =
 SRC_C =
 SRC_ASM =
 SRC_LINK =
+LINK_MAP =
 
 LIST_ASM = $(SRC_ASM:.MAR=.LIS)
 OBJ_ASM = $(SRC_ASM:.MAR=.OBJ)
 OBJ_C = $(SRC_C:.c=.obj)
-EXE_MAP = $(TARGET:.MOT=.MAP)
+#EXE_MAP = $(TARGET:.MOT=.MAP)
 EXE_ABS = $(TARGET:.MOT=.ABS)
 
 $(TARGET): $(SRC_C) $(SRC_ASM) $(SRC_LINK)
@@ -31,4 +33,4 @@ $(TARGET): $(SRC_C) $(SRC_ASM) $(SRC_LINK)
 	c38h $(EXE_ABS)
 
 clean:
-	rm -f $(LIST_ASM) $(OBJ_ASM) $(SRC_C) $(EXE_MAP) $(EXE_ABS) $(TARGET)
+	rm -f $(LIST_ASM) $(OBJ_ASM) $(OBJ_C) $(LINK_MAP) $(EXE_ABS) $(TARGET)
