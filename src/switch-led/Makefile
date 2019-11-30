@@ -8,7 +8,7 @@
 
 # Append following files
 #
-# 	TARGET = *.MOT		# Motorola S-record format executable file
+#	TARGET = *.MOT		# Motorola S-record format executable file
 # 	SRC_C = *.c		# C source file
 #	SRC_ASM = *.mar		# Asembly source file
 #	SRC_LINK = *.sub	# Linker file
