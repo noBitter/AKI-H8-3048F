@@ -1,0 +1,25 @@
+# Usage
+# $ make *.MOT
+# 	Compile files
+# $ make clean
+# 	Remove all output files
+
+# Append following files
+# 	TARGET = *.MOT
+# 	SOURCE_C = *.c
+#	SOURCE_ASM = *.mar
+#	SOURCE_LINK = *.sub
+
+TARGET =
+SOURCE_C =
+SOURCE_ASM =
+SOURCE_LNK =
+
+$(TARGET): $(SOURCE_C) $(SOURCE_ASM) $(SOURCE_LNK)
+	a38h $(SOURCE_ASM)
+	cl38h $(SOURCE_C)
+	lk38h $(SOURCE_LNK)
+	c38h $(TARGET:.MOT=.ABS)
+
+clean:
+	rm -f $(SOURCE_ASM:.mar=.LIS) $(SOURCE_ASM:.mar=.OBJ) $(SOURCE_C:.c=.obj) $(TARGET:.MOT=.MAP) $(TARGET:.MOT=.ABS) $(TARGET)
