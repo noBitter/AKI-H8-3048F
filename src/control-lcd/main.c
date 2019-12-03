@@ -67,6 +67,7 @@ int main(void){
 	return 0;
 }
 
+/* Display strings on LCD */
 void LCD_dsp(unsigned char *str, int line){
 	unsigned char *ad;
 	int i;
