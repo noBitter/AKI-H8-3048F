@@ -1,2 +1,12 @@
 # Default ignored files
 /workspace.xml
+
+*.LIS
+*.OBJ
+*.MAP
+*.obj
+*.ABS
+*.MOT
+
+cmake-build-debug
+CMakeLists.txt
