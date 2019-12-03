@@ -4,3 +4,7 @@
 *.obj
 *.ABS
 *.MOT
+
+.idea
+cmake-build-debug
+CMakeLists.txt
